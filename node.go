@@ -32,16 +32,16 @@ func getIP()(string){
 	 return localAddr_string[0]
 }
 
-//defines a node and holds metadata for it
-type node struct{
-	id	string
-	ip string
-	job string
-	cpu uint64
-	mem uint64
-	disk uint64
-	mu	sync.RWMutex
-}
+// //defines a node and holds metadata for it
+// type node struct{
+// 	id	string
+// 	ip string
+// 	job string
+// 	cpu uint64
+// 	mem uint64
+// 	disk uint64
+// 	mu	sync.RWMutex
+// }
 
 
 func (n *node)Get_ip()(string){

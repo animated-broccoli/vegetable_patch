@@ -31,13 +31,14 @@ func rest(){
 	router := mux.NewRouter().StrictSlash(true)
 
 	router.HandleFunc("/",Index)
+	router.HandleFunc("/init",Init).Methods("POST")
+	router.HandleFunc("/register",Register).Methods("POST")
+	//router.HandleFunc("/people/{id}", CreatePerson)
 	log.Fatal(http.ListenAndServe(":8080",router))
 }
 
 
-func Index(w http.ResponseWriter, r *http.Request){
-	fmt.Fprintf(w,"Hello, %q",html.EscapeString(r.URL.Path))
-}
+
 
 
 func printStats(){
@@ -52,12 +53,12 @@ func printStats(){
 func main(){
 	//node{Name: "Write presentation"}
 	n = Node()
-	n.Set_job("Worker")
-	printStats()
+	//n.Set_job("Worker")
+	//printStats()
 	//fmt.Printf("Gardens Galore!\n")
 	//serve()
 	
-	//rest()
+	rest()
 	//fetch_image()
 	//encode_address()
 	//decode_address("post.png")

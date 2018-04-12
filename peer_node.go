@@ -16,16 +16,18 @@ package main
 // )
 
 
-//defines a node and holds metadata for it
-type PeerNode struct{
-	id	string
-	ip string
-	job string
-	cpu uint64
-	mem uint64
-	disk uint64
-	//mu	sync.RWMutex
-}
+var nodes map[string]PeerNode = make(map[string]PeerNode)
+
+// //defines a node and holds metadata for it
+// type PeerNode struct{
+// 	id	string
+// 	ip string
+// 	job string
+// 	cpu uint64
+// 	mem uint64
+// 	disk uint64
+// 	//mu	sync.RWMutex
+// }
 
 
 
